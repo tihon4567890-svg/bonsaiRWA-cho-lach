@@ -21,4 +21,6 @@ with tab2:
     cay = st.selectbox("Chon cay", df["TenCay"])
     tt = df[df["TenCay"]==cay].iloc[0]
     st.metric("Do Am", f"{tt['DoAm']}%")
+    st.metric("Tuoi", f"{tt['Tuoi']} nam")
     st.metric("Gia Tri", f"{tt['GiaTri']:,} VND")
+    st.write(f"Trang Thai: {tt['TrangThai']}")
