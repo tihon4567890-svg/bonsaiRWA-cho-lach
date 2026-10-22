@@ -3,3 +3,4 @@ pandas
 plotly
 qrcode[pil]
 Pillow
+web3
