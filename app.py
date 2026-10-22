@@ -2,7 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import qrcode, io, random
-st.set_page_config(page_title='127 Cay Mai', layout='wide')
+from web3 import Web3
+
+# ===== BONSAIRWA V10 - QUICKNODE POLYGON MAINNET - DUONG ONG VANG =====
+QUICKNODE_URL = "https://quick-soft-forest.matic.quiknode.pro/84fc0c23521d03a382a4840796c8ba2b36a1b52b/"
+w3 = Web3(Web3.HTTPProvider(QUICKNODE_URL))
+# ===== HET PHAN QUICKNODE =====
+
+st.set_page_config(page_title='127 Cay Mai', layout="wide")
 st.title('127 Cay Mai Vang RWA')
 st.caption('Cho Lach - QR + Cho RWA + IoT')
 try:
