@@ -1,60 +1,130 @@
-<!DOCTYPE html><html data-dpl-id="dpl_2SYLLuyLhAyrkpN5aGHZp2fu9izS" lang="en" class="optimisticai_d4925249-module__WZtcjq__variable optimisticmono_9b82a078-module__hMSRWa__variable light"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/immutable/chunks/1f8erciyyi1ut.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/1_qls4d_svasd.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/2r0g1tiua-xns.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/18ny043cr5ukd.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/immutable/chunks/176hbz2k-u20e.js"/><script src="/_next/static/immutable/chunks/20p-kz-3spni9.js" async=""></script><script src="/_next/static/immutable/chunks/2_lhxaj6d_76l.js" async=""></script><script src="/_next/static/immutable/chunks/turbopack-3z34en4hsbdwa.js" async=""></script><script src="/_next/static/immutable/chunks/2fpr3cz42ore3.js" async=""></script><script src="/_next/static/immutable/chunks/3s9arri0r4hli.js" async=""></script><meta name="next-size-adjust" content=""/><script>(function(){try{var d=document.documentElement,m=window.matchMedia("(prefers-color-scheme: dark)");function a(){var c=d.classList;if(m.matches){c.remove("light");c.add("dark");}else{c.remove("dark");c.add("light");}}a();m.addEventListener("change",a);}catch(e){}})()</script><meta name="sentry-trace" content="eabf38f480264d1ebce045eeb8fe67af-a955ce704bb87b1b-0"/><meta name="baggage" content="sentry-environment=production,sentry-release=19affd7a79d63ae1b9e1dbb4dd92fa56d6b97c96,sentry-public_key=217336c598020d63d1a44137ff8fdb71,sentry-trace_id=eabf38f480264d1ebce045eeb8fe67af,sentry-org_id=4509963614355457,sentry-sampled=false,sentry-sample_rand=0.8131700564764046,sentry-sample_rate=0.1"/><script src="/_next/static/immutable/chunks/0c0hxoamwjsbw.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><div class="min-h-dvh px-6 pt-8 pb-8 font-mono text-[14px] leading-[1.6]"><pre class="mx-auto flex max-w-[1000px] items-start bg-transparent"><div class="text-text-tertiary border-fill-divider me-4 min-w-[40px] shrink-0 border-e pe-4 text-end select-none" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div>32</div><div>33</div><div>34</div><div>35</div><div>36</div><div>37</div><div>38</div><div>39</div><div>40</div><div>41</div><div>42</div><div>43</div><div>44</div><div>45</div><div>46</div><div>47</div><div>48</div><div>49</div><div>50</div><div>51</div><div>52</div><div>53</div><div>54</div><div>55</div><div>56</div><div>57</div><div>58</div><div>59</div><div>60</div><div>61</div><div>62</div><div>63</div><div>64</div><div>65</div><div>66</div><div>67</div><div>68</div><div>69</div><div>70</div><div>71</div><div>72</div><div>73</div><div>74</div><div>75</div><div>76</div></div><code class="block min-w-0 flex-1 overflow-x-auto whitespace-pre"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> streamlit </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> st</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pandas </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pd</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> plotly.express </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> px</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> qrcode, io, random</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> web3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Web3</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">QUICKNODE_URL</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "https://quick-soft-forest.matic.quiknode.pro/84fc0c23521d03a382a4840796c8ba2b36a1b52b/"</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">w3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Web3(Web3.HTTPProvider(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">QUICKNODE_URL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">))</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.set_page_config(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">page_title</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'BONSAIRWA V10 GOLDEN'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">layout</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wide"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">page_icon</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"🌳"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 1: LOGO LUC SAC</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;div style="background:#0a0a0a; padding:20px; border-radius:15px; border:3px solid #FFD700; text-align:center;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h1 style="color:#FFD700; font-size:42px; margin:0;">BONSAIRWA&#x3C;/h1></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h2 style="color:white; font-size:28px; margin:5px;">V10 GOLDEN - LUC SAC DOC BAN&#x3C;/h2></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:#F9A8D4; font-size:16px;">Vang • Tim • Xanh da troi • Xanh ma non • Trang • Hong lot&#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:#A3E635; font-size:14px;">Doc ban CEO Thanh Thai Nguyen - Cho Lach!&#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;/div></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">unsafe_allow_html</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 2: CAY ME</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;div style="background: linear-gradient(90deg, #8B5CF6 0%, #38BDF8 50%, #FFD700 100%); padding:15px; border-radius:10px; margin-top:15px; text-align:center;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h2 style="color:white; font-size:22px; margin:0;">BONSAIRWA-000 | MAI XU ME - BAU VAT&#x3C;/h2></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:black; font-weight:bold; font-size:16px; margin:5px; background:white; padding:5px; border-radius:5px;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        HOANH 90 • CAO 3M • TRUC QUAN TU • DAU VOI DUOI CHUOT • XU CHAY • 500 TRIEU</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:white; font-size:13px;">Mai Vang 6 Canh Nguyen Thuy - Khong Ghep - Cay Me 127 Cay&#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;/div></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">unsafe_allow_html</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 3: BLOCKCHAIN - SACH KHONG CO CHU LA</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">col1, col2, col3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> st.columns(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col1:</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> w3.is_connected():</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.success(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Da ket noi MATIC - Block: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">w3.eth.block_number</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.error(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Chua ket noi MATIC"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col2:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.info(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Block Cay Me: 95777687 | BONSAIRWA-000-XU-90-3M"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col3:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.warning(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"QuickNode: Rung Mem Nhanh - Free 10M"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"---"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.title(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'127 Cay Mai Vang RWA'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.caption(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Cho Lach - QR + Cho RWA + IoT - V10 GOLDEN'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    df </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pd.read_csv(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'data.csv'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">encoding</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'utf-8'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">on_bad_lines</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'skip'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    df </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> df.sort_values(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">by</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ID'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">ascending</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.write(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Tong </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{len</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(df)</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cay - Tong gia tri: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">df[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'GiaTri'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">].sum()</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:,</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> VND"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    mother </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> df[df[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ID'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mother.empty:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"### CAY ME BONSAIRWA-000 - HOANH 90 - 500 TRIEU"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.dataframe(mother, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">use_container_width</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    t1,t2,t3,t4,t5 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> st.tabs([</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Ban Do'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Canh Bao'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'QR Cay'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Cho RWA'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'IoT'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">])</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> t1:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.subheader(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97
+A	B	C	D	E	F	G	H	I	J	K	L	M	N
+ID	Hang	Cot	TenCay	DoAm	Tuoi	GiaTri	TrangThai	TokenID	RWAStatus	Hoanh	Cao	Dang	Loai
+0	M	0	Mai Xu Me Hoanh 90 Cao 3m Truc Quan Tu Dau Voi Duoi Chuot Xu Chay	85	20	500000000	Khoe	BONSAIRWA-000-XU-90-3M	Bau Vat	90	3.0	Truc Quan Tu Dau Voi Duoi Chuot	Xu Chay
+1	A	1	Mai Vang 1	85	7	15000000	Khoe	BONSAIRWA-001	Da Mint	29	1.649777921575191	Truc	Mai Vang 6 Canh
+2	A	2	Mai Vang 2	86	8	15000000	Khoe	BONSAIRWA-002	Da Mint	42	1.3147089145355442	Truc	Mai Vang 6 Canh
+3	A	3	Mai Vang 3	87	5	18000000	Khoe	BONSAIRWA-003	Da Mint	22	0.8677110855094512	Truc	Mai Vang 6 Canh
+4	A	4	Mai Vang 4	88	3	15000000	Khoe	BONSAIRWA-004	Da Mint	31	2.101322117707034	Truc	Mai Vang 6 Canh
+5	A	5	Mai Vang 5	74	7	20000000	Can Tuoi Nuoc	BONSAIRWA-005	Da Mint	25	1.080506182615054	Truc	Mai Vang 6 Canh
+6	A	6	Mai Vang 6	73	8	12000000	Can Tuoi Nuoc	BONSAIRWA-006	Da Mint	20	1.472184540538243	Truc	Mai Vang 6 Canh
+7	A	7	Mai Vang 7	78	5	20000000	Can Tuoi Nuoc	BONSAIRWA-007	Da Mint	40	0.8097349442492905	Truc	Mai Vang 6 Canh
+8	A	8	Mai Vang 8	91	5	15000000	Khoe	BONSAIRWA-008	Da Mint	23	1.4474891916701649	Truc	Mai Vang 6 Canh
+9	A	9	Mai Vang 9	85	5	12000000	Khoe	BONSAIRWA-009	Da Mint	24	1.8963550904860254	Truc	Mai Vang 6 Canh
+10	A	10	Mai Vang 10	89	5	25000000	Khoe	BONSAIRWA-010	Da Mint	39	1.9750368166762589	Truc	Mai Vang 6 Canh
+11	B	1	Mai Vang 11	75	3	12000000	Can Tuoi Nuoc	BONSAIRWA-011	Da Mint	45	2.0271385077500397	Truc	Mai Vang 6 Canh
+12	B	2	Mai Vang 12	73	8	15000000	Can Tuoi Nuoc	BONSAIRWA-012	Da Mint	30	1.5006299783075965	Truc	Mai Vang 6 Canh
+13	B	3	Mai Vang 13	85	4	20000000	Khoe	BONSAIRWA-013	Da Mint	34	1.751890832019055	Truc	Mai Vang 6 Canh
+14	B	4	Mai Vang 14	92	7	25000000	Khoe	BONSAIRWA-014	Da Mint	21	1.7870150202179516	Truc	Mai Vang 6 Canh
+15	B	5	Mai Vang 15	73	5	25000000	Can Tuoi Nuoc	BONSAIRWA-015	Da Mint	21	0.9739043966003588	Truc	Mai Vang 6 Canh
+16	B	6	Mai Vang 16	75	7	20000000	Can Tuoi Nuoc	BONSAIRWA-016	Da Mint	44	1.2538252402598768	Truc	Mai Vang 6 Canh
+17	B	7	Mai Vang 17	79	6	25000000	Can Tuoi Nuoc	BONSAIRWA-017	Da Mint	45	1.3788138284620155	Truc	Mai Vang 6 Canh
+18	B	8	Mai Vang 18	89	3	15000000	Khoe	BONSAIRWA-018	Da Mint	24	1.2927998668454683	Truc	Mai Vang 6 Canh
+19	B	9	Mai Vang 19	73	8	25000000	Can Tuoi Nuoc	BONSAIRWA-019	Da Mint	25	1.7152661343801676	Truc	Mai Vang 6 Canh
+20	B	10	Mai Vang 20	92	6	25000000	Khoe	BONSAIRWA-020	Da Mint	28	2.1719817436435873	Truc	Mai Vang 6 Canh
+21	C	1	Mai Vang 21	87	5	18000000	Khoe	BONSAIRWA-021	Da Mint	24	1.108814622929167	Truc	Mai Vang 6 Canh
+22	C	2	Mai Vang 22	76	8	18000000	Can Tuoi Nuoc	BONSAIRWA-022	Da Mint	41	1.6117458904532207	Truc	Mai Vang 6 Canh
+23	C	3	Mai Vang 23	87	6	25000000	Khoe	BONSAIRWA-023	Da Mint	29	0.8998727440306884	Truc	Mai Vang 6 Canh
+24	C	4	Mai Vang 24	93	3	15000000	Khoe	BONSAIRWA-024	Da Mint	23	1.2175456390746557	Truc	Mai Vang 6 Canh
+25	C	5	Mai Vang 25	71	5	20000000	Can Tuoi Nuoc	BONSAIRWA-025	Da Mint	28	1.9868187554543772	Truc	Mai Vang 6 Canh
+26	C	6	Mai Vang 26	91	3	12000000	Khoe	BONSAIRWA-026	Da Mint	41	1.77185421118853	Truc	Mai Vang 6 Canh
+27	C	7	Mai Vang 27	82	8	25000000	Khoe	BONSAIRWA-027	Da Mint	30	1.2455475310565125	Truc	Mai Vang 6 Canh
+28	C	8	Mai Vang 28	70	5	15000000	Can Tuoi Nuoc	BONSAIRWA-028	Da Mint	35	0.91888948942506	Truc	Mai Vang 6 Canh
+29	C	9	Mai Vang 29	78	5	18000000	Can Tuoi Nuoc	BONSAIRWA-029	Da Mint	38	0.9045198479678218	Truc	Mai Vang 6 Canh
+30	C	10	Mai Vang 30	88	6	12000000	Khoe	BONSAIRWA-030	Da Mint	42	2.122558665427924	Truc	Mai Vang 6 Canh
+31	D	1	Mai Vang 31	84	7	20000000	Khoe	BONSAIRWA-031	Da Mint	39	1.150189914106765	Truc	Mai Vang 6 Canh
+32	D	2	Mai Vang 32	74	4	15000000	Can Tuoi Nuoc	BONSAIRWA-032	Da Mint	35	1.2432074688714452	Truc	Mai Vang 6 Canh
+33	D	3	Mai Vang 33	79	4	20000000	Can Tuoi Nuoc	BONSAIRWA-033	Da Mint	25	1.7660358021895837	Truc	Mai Vang 6 Canh
+34	D	4	Mai Vang 34	89	3	15000000	Khoe	BONSAIRWA-034	Da Mint	43	1.6314213910101965	Truc	Mai Vang 6 Canh
+35	D	5	Mai Vang 35	85	5	15000000	Khoe	BONSAIRWA-035	Da Mint	30	1.9039461077823694	Truc	Mai Vang 6 Canh
+36	D	6	Mai Vang 36	87	4	18000000	Khoe	BONSAIRWA-036	Da Mint	42	1.0322665067266854	Truc	Mai Vang 6 Canh
+37	D	7	Mai Vang 37	71	8	18000000	Can Tuoi Nuoc	BONSAIRWA-037	Da Mint	29	0.9290576079632112	Truc	Mai Vang 6 Canh
+38	D	8	Mai Vang 38	90	3	18000000	Khoe	BONSAIRWA-038	Da Mint	45	1.09694033873014	Truc	Mai Vang 6 Canh
+39	D	9	Mai Vang 39	86	5	18000000	Khoe	BONSAIRWA-039	Da Mint	41	1.5042216226131873	Truc	Mai Vang 6 Canh
+40	D	10	Mai Vang 40	76	3	12000000	Can Tuoi Nuoc	BONSAIRWA-040	Da Mint	20	1.3768937476746042	Truc	Mai Vang 6 Canh
+41	E	1	Mai Vang 41	89	4	15000000	Khoe	BONSAIRWA-041	Da Mint	36	0.8436503605953614	Truc	Mai Vang 6 Canh
+42	E	2	Mai Vang 42	91	8	18000000	Khoe	BONSAIRWA-042	Da Mint	35	1.591903756139934	Truc	Mai Vang 6 Canh
+43	E	3	Mai Vang 43	86	3	20000000	Khoe	BONSAIRWA-043	Da Mint	33	0.9171433920756376	Truc	Mai Vang 6 Canh
+44	E	4	Mai Vang 44	82	7	18000000	Khoe	BONSAIRWA-044	Da Mint	20	1.9746006882248857	Truc	Mai Vang 6 Canh
+45	E	5	Mai Vang 45	84	6	12000000	Khoe	BONSAIRWA-045	Da Mint	44	1.091184058420563	Truc	Mai Vang 6 Canh
+46	E	6	Mai Vang 46	73	4	18000000	Can Tuoi Nuoc	BONSAIRWA-046	Da Mint	32	1.769253770723673	Truc	Mai Vang 6 Canh
+47	E	7	Mai Vang 47	80	4	15000000	Khoe	BONSAIRWA-047	Da Mint	31	0.9527430539409031	Truc	Mai Vang 6 Canh
+48	E	8	Mai Vang 48	92	8	15000000	Khoe	BONSAIRWA-048	Da Mint	23	1.3914431978646142	Truc	Mai Vang 6 Canh
+49	E	9	Mai Vang 49	87	3	20000000	Khoe	BONSAIRWA-049	Da Mint	35	1.1064125903694002	Truc	Mai Vang 6 Canh
+50	E	10	Mai Vang 50	85	5	15000000	Khoe	BONSAIRWA-050	Da Mint	35	2.0496978173719755	Truc	Mai Vang 6 Canh
+51	F	1	Mai Vang 51	82	6	12000000	Khoe	BONSAIRWA-051	Da Mint	45	1.6575566442749923	Truc	Mai Vang 6 Canh
+52	F	2	Mai Vang 52	89	3	20000000	Khoe	BONSAIRWA-052	Da Mint	36	1.1213755462603232	Truc	Mai Vang 6 Canh
+53	F	3	Mai Vang 53	84	7	12000000	Khoe	BONSAIRWA-053	Da Mint	33	0.9747817825094364	Truc	Mai Vang 6 Canh
+54	F	4	Mai Vang 54	91	3	20000000	Khoe	BONSAIRWA-054	Da Mint	23	1.7981253851261108	Truc	Mai Vang 6 Canh
+55	F	5	Mai Vang 55	92	4	18000000	Khoe	BONSAIRWA-055	Da Mint	30	0.8143002118627147	Truc	Mai Vang 6 Canh
+56	F	6	Mai Vang 56	82	5	25000000	Khoe	BONSAIRWA-056	Da Mint	39	1.511576696650723	Truc	Mai Vang 6 Canh
+57	F	7	Mai Vang 57	86	3	15000000	Khoe	BONSAIRWA-057	Da Mint	43	0.9755751126344171	Truc	Mai Vang 6 Canh
+58	F	8	Mai Vang 58	93	4	12000000	Khoe	BONSAIRWA-058	Da Mint	38	1.3450018865262758	Truc	Mai Vang 6 Canh
+59	F	9	Mai Vang 59	80	5	20000000	Khoe	BONSAIRWA-059	Da Mint	35	1.368259142297903	Truc	Mai Vang 6 Canh
+60	F	10	Mai Vang 60	91	4	20000000	Khoe	BONSAIRWA-060	Da Mint	43	0.8439284435314071	Truc	Mai Vang 6 Canh
+61	G	1	Mai Vang 61	80	5	25000000	Khoe	BONSAIRWA-061	Da Mint	39	1.9066690781030566	Truc	Mai Vang 6 Canh
+62	G	2	Mai Vang 62	86	6	15000000	Khoe	BONSAIRWA-062	Da Mint	20	1.45734013448991	Truc	Mai Vang 6 Canh
+63	G	3	Mai Vang 63	95	5	20000000	Khoe	BONSAIRWA-063	Da Mint	26	1.842254981687395	Truc	Mai Vang 6 Canh
+64	G	4	Mai Vang 64	81	4	25000000	Khoe	BONSAIRWA-064	Da Mint	39	1.9878869433856674	Truc	Mai Vang 6 Canh
+65	G	5	Mai Vang 65	93	5	15000000	Khoe	BONSAIRWA-065	Da Mint	24	2.0516147324284875	Truc	Mai Vang 6 Canh
+66	G	6	Mai Vang 66	82	8	25000000	Khoe	BONSAIRWA-066	Da Mint	26	2.089567717862589	Truc	Mai Vang 6 Canh
+67	G	7	Mai Vang 67	73	5	15000000	Can Tuoi Nuoc	BONSAIRWA-067	Da Mint	22	1.9395345782362667	Truc	Mai Vang 6 Canh
+68	G	8	Mai Vang 68	70	4	15000000	Can Tuoi Nuoc	BONSAIRWA-068	Da Mint	43	1.1240423645395574	Truc	Mai Vang 6 Canh
+69	G	9	Mai Vang 69	84	4	20000000	Khoe	BONSAIRWA-069	Da Mint	21	1.4828679290550015	Truc	Mai Vang 6 Canh
+70	G	10	Mai Vang 70	81	3	25000000	Khoe	BONSAIRWA-070	Da Mint	45	1.3891285005028862	Truc	Mai Vang 6 Canh
+71	H	1	Mai Vang 71	93	5	18000000	Khoe	BONSAIRWA-071	Da Mint	28	1.322309589594509	Truc	Mai Vang 6 Canh
+72	H	2	Mai Vang 72	79	5	12000000	Can Tuoi Nuoc	BONSAIRWA-072	Da Mint	26	1.144628595805791	Truc	Mai Vang 6 Canh
+73	H	3	Mai Vang 73	79	8	20000000	Can Tuoi Nuoc	BONSAIRWA-073	Da Mint	38	1.585822804681864	Truc	Mai Vang 6 Canh
+74	H	4	Mai Vang 74	86	8	20000000	Khoe	BONSAIRWA-074	Da Mint	40	1.1212958331307632	Truc	Mai Vang 6 Canh
+75	H	5	Mai Vang 75	92	4	20000000	Khoe	BONSAIRWA-075	Da Mint	27	1.0558432489664855	Truc	Mai Vang 6 Canh
+76	H	6	Mai Vang 76	83	7	20000000	Khoe	BONSAIRWA-076	Da Mint	38	0.9145735580744592	Truc	Mai Vang 6 Canh
+77	H	7	Mai Vang 77	82	8	12000000	Khoe	BONSAIRWA-077	Da Mint	37	0.8184485296157938	Truc	Mai Vang 6 Canh
+78	H	8	Mai Vang 78	79	8	12000000	Can Tuoi Nuoc	BONSAIRWA-078	Da Mint	45	2.121218234959672	Truc	Mai Vang 6 Canh
+79	H	9	Mai Vang 79	90	7	25000000	Khoe	BONSAIRWA-079	Da Mint	20	1.168165693026318	Truc	Mai Vang 6 Canh
+80	H	10	Mai Vang 80	78	4	25000000	Can Tuoi Nuoc	BONSAIRWA-080	Da Mint	43	1.1417573010669653	Truc	Mai Vang 6 Canh
+81	I	1	Mai Vang 81	94	3	20000000	Khoe	BONSAIRWA-081	Da Mint	29	2.1066179493559867	Truc	Mai Vang 6 Canh
+82	I	2	Mai Vang 82	85	5	15000000	Khoe	BONSAIRWA-082	Da Mint	22	1.1721795531135561	Truc	Mai Vang 6 Canh
+83	I	3	Mai Vang 83	72	6	12000000	Can Tuoi Nuoc	BONSAIRWA-083	Da Mint	33	0.951147518552115	Truc	Mai Vang 6 Canh
+84	I	4	Mai Vang 84	88	6	20000000	Khoe	BONSAIRWA-084	Da Mint	45	1.745902244722333	Truc	Mai Vang 6 Canh
+85	I	5	Mai Vang 85	84	6	20000000	Khoe	BONSAIRWA-085	Da Mint	25	1.5763115272144845	Truc	Mai Vang 6 Canh
+86	I	6	Mai Vang 86	84	8	20000000	Khoe	BONSAIRWA-086	Da Mint	30	1.512676270988698	Truc	Mai Vang 6 Canh
+87	I	7	Mai Vang 87	92	8	18000000	Khoe	BONSAIRWA-087	Da Mint	44	1.105802145552432	Truc	Mai Vang 6 Canh
+88	I	8	Mai Vang 88	94	5	25000000	Khoe	BONSAIRWA-088	Da Mint	22	0.8242989547726491	Truc	Mai Vang 6 Canh
+89	I	9	Mai Vang 89	82	7	20000000	Khoe	BONSAIRWA-089	Da Mint	27	1.8358880744091874	Truc	Mai Vang 6 Canh
+90	I	10	Mai Vang 90	88	7	20000000	Khoe	BONSAIRWA-090	Da Mint	31	1.6717948956536588	Truc	Mai Vang 6 Canh
+91	J	1	Mai Vang 91	93	6	12000000	Khoe	BONSAIRWA-091	Da Mint	42	0.9062416670973552	Truc	Mai Vang 6 Canh
+92	J	2	Mai Vang 92	95	6	18000000	Khoe	BONSAIRWA-092	Da Mint	35	1.1345847836370502	Truc	Mai Vang 6 Canh
+93	J	3	Mai Vang 93	79	4	12000000	Can Tuoi Nuoc	BONSAIRWA-093	Da Mint	26	1.812748552367777	Truc	Mai Vang 6 Canh
+94	J	4	Mai Vang 94	78	7	25000000	Can Tuoi Nuoc	BONSAIRWA-094	Da Mint	41	1.9270390535958004	Truc	Mai Vang 6 Canh
+95	J	5	Mai Vang 95	87	4	18000000	Khoe	BONSAIRWA-095	Da Mint	28	0.9534873327271208	Truc	Mai Vang 6 Canh
+96	J	6	Mai Vang 96	92	6	12000000	Khoe	BONSAIRWA-096	Da Mint	20	1.9308778869363752	Truc	Mai Vang 6 Canh
+97	J	7	Mai Vang 97	73	5	15000000	Can Tuoi Nuoc	BONSAIRWA-097	Da Mint	34	0.8642123119806264	Truc	Mai Vang 6 Canh
+98	J	8	Mai Vang 98	74	6	20000000	Can Tuoi Nuoc	BONSAIRWA-098	Da Mint	23	1.8993735873417186	Truc	Mai Vang 6 Canh
+99	J	9	Mai Vang 99	78	3	25000000	Can Tuoi Nuoc	BONSAIRWA-099	Da Mint	45	0.8727673110730536	Truc	Mai Vang 6 Canh
+100	J	10	Mai Vang 100	74	7	18000000	Can Tuoi Nuoc	BONSAIRWA-100	Da Mint	40	0.9204623154882374	Truc	Mai Vang 6 Canh
+101	K	1	Mai Vang 101	87	4	12000000	Khoe	BONSAIRWA-101	Da Mint	25	2.1521980876703783	Truc	Mai Vang 6 Canh
+102	K	2	Mai Vang 102	85	8	18000000	Khoe	BONSAIRWA-102	Da Mint	25	0.805861776078718	Truc	Mai Vang 6 Canh
+103	K	3	Mai Vang 103	86	5	12000000	Khoe	BONSAIRWA-103	Da Mint	26	1.4905490014417309	Truc	Mai Vang 6 Canh
+104	K	4	Mai Vang 104	94	3	20000000	Khoe	BONSAIRWA-104	Da Mint	39	1.5425705660943745	Truc	Mai Vang 6 Canh
+105	K	5	Mai Vang 105	70	7	25000000	Can Tuoi Nuoc	BONSAIRWA-105	Da Mint	42	1.4808839434140006	Truc	Mai Vang 6 Canh
+106	K	6	Mai Vang 106	93	5	18000000	Khoe	BONSAIRWA-106	Da Mint	28	1.3851478084001942	Truc	Mai Vang 6 Canh
+107	K	7	Mai Vang 107	94	6	18000000	Khoe	BONSAIRWA-107	Da Mint	45	2.1803795150789833	Truc	Mai Vang 6 Canh
+108	K	8	Mai Vang 108	90	7	25000000	Khoe	BONSAIRWA-108	Da Mint	40	0.8277399215764292	Truc	Mai Vang 6 Canh
+109	K	9	Mai Vang 109	76	3	20000000	Can Tuoi Nuoc	BONSAIRWA-109	Da Mint	26	1.5673220920559539	Truc	Mai Vang 6 Canh
+110	K	10	Mai Vang 110	72	5	25000000	Can Tuoi Nuoc	BONSAIRWA-110	Da Mint	36	1.9478966019627644	Truc	Mai Vang 6 Canh
+111	L	1	Mai Vang 111	86	8	12000000	Khoe	BONSAIRWA-111	Da Mint	23	2.014416240678317	Truc	Mai Vang 6 Canh
+112	L	2	Mai Vang 112	78	3	20000000	Can Tuoi Nuoc	BONSAIRWA-112	Da Mint	41	1.7019478427950716	Truc	Mai Vang 6 Canh
+113	L	3	Mai Vang 113	71	4	18000000	Can Tuoi Nuoc	BONSAIRWA-113	Da Mint	35	1.1532286768514055	Truc	Mai Vang 6 Canh
+114	L	4	Mai Vang 114	74	3	20000000	Can Tuoi Nuoc	BONSAIRWA-114	Da Mint	31	0.9062542718750501	Truc	Mai Vang 6 Canh
+115	L	5	Mai Vang 115	92	5	25000000	Khoe	BONSAIRWA-115	Da Mint	36	1.5240291400030808	Truc	Mai Vang 6 Canh
+116	L	6	Mai Vang 116	94	7	12000000	Khoe	BONSAIRWA-116	Da Mint	38	1.813172103851036	Truc	Mai Vang 6 Canh
+117	L	7	Mai Vang 117	70	5	20000000	Can Tuoi Nuoc	BONSAIRWA-117	Da Mint	30	2.1907855625571746	Truc	Mai Vang 6 Canh
+118	L	8	Mai Vang 118	70	8	18000000	Can Tuoi Nuoc	BONSAIRWA-118	Da Mint	34	2.0488612023435784	Truc	Mai Vang 6 Canh
+119	L	9	Mai Vang 119	92	7	20000000	Khoe	BONSAIRWA-119	Da Mint	40	0.8989501799084935	Truc	Mai Vang 6 Canh
+120	L	10	Mai Vang 120	87	6	18000000	Khoe	BONSAIRWA-120	Da Mint	21	1.4124847852531395	Truc	Mai Vang 6 Canh
+121	M	1	Mai Vang 121	89	6	12000000	Khoe	BONSAIRWA-121	Da Mint	20	1.3608688055873275	Truc	Mai Vang 6 Canh
+122	M	2	Mai Vang 122	78	4	20000000	Can Tuoi Nuoc	BONSAIRWA-122	Da Mint	40	0.9767389908874027	Truc	Mai Vang 6 Canh
+123	M	3	Mai Vang 123	88	6	18000000	Khoe	BONSAIRWA-123	Da Mint	21	2.0389490930329215	Truc	Mai Vang 6 Canh
+124	M	4	Mai Vang 124	75	3	20000000	Can Tuoi Nuoc	BONSAIRWA-124	Da Mint	32	1.3584701111372008	Truc	Mai Vang 6 Canh
+125	M	5	Mai Vang 125	73	6	15000000	Can Tuoi Nuoc	BONSAIRWA-125	Da Mint	40	1.4166490133626513	Truc	Mai Vang 6 Canh
+126	M	6	Mai Vang 126	84	6	15000000	Khoe	BONSAIRWA-126	Da Mint	34	2.18134659612553	Truc	Mai Vang 6 Canh
+127	M	7	Mai Vang 127	86	5	20000000	Khoe	BONSAIRWA-127	Da Mint	25	1.8138426927650126	Truc	Mai Vang 6 Canh
