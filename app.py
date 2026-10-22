@@ -1,69 +1,75 @@
-<!DOCTYPE html><html data-dpl-id="dpl_rHdPMJkfFmDABwKKwkSW1jwDsFmq" lang="en" class="optimisticai_d4925249-module__WZtcjq__variable optimisticmono_9b82a078-module__hMSRWa__variable light"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/immutable/chunks/1f8erciyyi1ut.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/1_qls4d_svasd.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/2r0g1tiua-xns.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/immutable/chunks/18ny043cr5ukd.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/immutable/chunks/176hbz2k-u20e.js"/><script src="/_next/static/immutable/chunks/1_3fsup0qjdx9.js" async=""></script><script src="/_next/static/immutable/chunks/2_lhxaj6d_76l.js" async=""></script><script src="/_next/static/immutable/chunks/turbopack-2_3qewaqtue0y.js" async=""></script><script src="/_next/static/immutable/chunks/2fpr3cz42ore3.js" async=""></script><script src="/_next/static/immutable/chunks/3s9arri0r4hli.js" async=""></script><meta name="next-size-adjust" content=""/><script>(function(){try{var d=document.documentElement,m=window.matchMedia("(prefers-color-scheme: dark)");function a(){var c=d.classList;if(m.matches){c.remove("light");c.add("dark");}else{c.remove("dark");c.add("light");}}a();m.addEventListener("change",a);}catch(e){}})()</script><meta name="sentry-trace" content="ddbbe9f4300c4a8990480bdb92b8fb48-a76e079a4396f07f-0"/><meta name="baggage" content="sentry-environment=production,sentry-release=882f54457031271e5169189af00ae51dd5f72417,sentry-public_key=217336c598020d63d1a44137ff8fdb71,sentry-trace_id=ddbbe9f4300c4a8990480bdb92b8fb48,sentry-org_id=4509963614355457,sentry-sampled=false,sentry-sample_rand=0.4628301131178413,sentry-sample_rate=0.1"/><script src="/_next/static/immutable/chunks/0c0hxoamwjsbw.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><div class="min-h-dvh px-6 pt-8 pb-8 font-mono text-[14px] leading-[1.6]"><pre class="mx-auto flex max-w-[1000px] items-start bg-transparent"><div class="text-text-tertiary border-fill-divider me-4 min-w-[40px] shrink-0 border-e pe-4 text-end select-none" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div>32</div><div>33</div><div>34</div><div>35</div><div>36</div><div>37</div><div>38</div><div>39</div><div>40</div><div>41</div><div>42</div><div>43</div><div>44</div><div>45</div><div>46</div><div>47</div><div>48</div><div>49</div><div>50</div><div>51</div><div>52</div><div>53</div><div>54</div><div>55</div><div>56</div><div>57</div><div>58</div><div>59</div><div>60</div><div>61</div><div>62</div><div>63</div><div>64</div><div>65</div><div>66</div><div>67</div><div>68</div><div>69</div><div>70</div><div>71</div><div>72</div><div>73</div><div>74</div><div>75</div><div>76</div><div>77</div><div>78</div><div>79</div><div>80</div><div>81</div><div>82</div><div>83</div><div>84</div><div>85</div><div>86</div><div>87</div><div>88</div><div>89</div><div>90</div><div>91</div><div>92</div><div>93</div><div>94</div></div><code class="block min-w-0 flex-1 overflow-x-auto whitespace-pre"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> streamlit </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> st</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pandas </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pd</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> plotly.express </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> px</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> qrcode, io, random</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> web3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Web3</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># ===== BONSAIRWA V10 GOLDEN - 3 TIEU DE DOC BAN =====</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 1: LUC SAC DOC BAN</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 2: CAY ME HOANH 90</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># TIEU DE 3: POLYGON BLOCK</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">QUICKNODE_URL</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "https://quick-soft-forest.matic.quiknode.pro/84fc0c23521d03a382a4840796c8ba2b36a1b52b/"</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">w3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Web3(Web3.HTTPProvider(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">QUICKNODE_URL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">))</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.set_page_config(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">page_title</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'BONSAIRWA V10 GOLDEN'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">layout</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wide"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">page_icon</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"🌳"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># ===== TIEU DE 1: LOGO LUC SAC DOC BAN =====</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;div style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding:20px; border-radius:15px; border:3px solid #FFD700; text-align:center;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h1 style="color:#FFD700; font-size:42px; margin:0;">BONSAIRWA&#x3C;/h1></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h2 style="color:white; font-size:28px; margin:5px;">V10 GOLDEN • LỤC SẮC ĐỘC BẢN&#x3C;/h2></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:#F9A8D4; font-size:16px; margin:5px;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        🟡 Vàng • 🟣 Tím • 🔵 Xanh da trời • 🟢 Xanh mạ non • ⚪ Trắng • 🌸 Hồng lợt</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:#A3E635; font-size:14px;">Độc bản của CEO Thanh Thai Nguyen - Chợ Lách - Không đụng hàng!&#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;/div></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">unsafe_allow_html</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># ===== TIEU DE 2: CAY ME HOANH 90 =====</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;div style="background: linear-gradient(90deg, #8B5CF6 0%, #38BDF8 50%, #FFD700 100%); padding:15px; border-radius:10px; margin-top:15px; text-align:center;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;h2 style="color:white; font-size:24px; margin:0;">🌳 BONSAIRWA-000 | MAI XÙ MẸ - BÁU VẬT VƯỜN&#x3C;/h2></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:black; font-weight:bold; font-size:18px; margin:5px; background:white; padding:5px; border-radius:5px;"></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        HOÀNH 90 • CAO 3M • DÁNG TRỰC QUÂN TỬ • ĐẦU VOI ĐUÔI CHUỘT • XÙ CHẢY • 500 TRIỆU VND</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    &#x3C;p style="color:white; font-size:14px;">Mai Vàng 6 Cánh Nguyên Thủy - Không Ghép - Gen Quý Hiếm Miền Tây - 15-20 Năm - Cây Mẹ Của 127 Cây&#x3C;/p></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#x3C;/div></span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">unsafe_allow_html</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># ===== TIEU DE 3: POLYGON BLOCK + QUICKNODE =====</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">col1, col2, col3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> st.columns(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col1:</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> w3.is_connected():</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.success(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"✅ Polygon Mainnet - Block: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">w3.eth.block_number</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.error(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"❌ Chưa kết nối Polygon"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col2:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.info(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"🔗 Block Cây Mẹ: 95777687 | BONSAIRWA-000-XU-90-3M"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> col3:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.warning(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"⚡ QuickNode: Rừng Mềm Nhanh - Miễn Phí 10M credits"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.markdown(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"---"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># ===== PHAN CU: GIU NGUYEN 127 CAY =====</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.title(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'127 Cây Mai Vàng RWA'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">st.caption(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Chợ Lách - QR + Chợ RWA + IoT - V10 GOLDEN Lục Sắc Độc Bản'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    df </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pd.read_csv(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'data.csv'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">encoding</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'utf-8'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">on_bad_lines</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'skip'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    # Clear cache to show new mother tree</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    # Force reload</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    df </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> df.sort_values(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">by</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ID'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">ascending</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    st.write(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Tổng </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{len</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(df)</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cây - Tổng giá trị: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">df[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'GiaTri'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">].sum()</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:,</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> VND"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    </span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    # Show mother tree highlight</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    mother </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> df[df[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ID'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mother.empty:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        st.markdown(</span><span style="--shiki-light:#032F62;--s
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import qrcode, io, random
+from web3 import Web3
+
+# ===== BONSAIRWA V10 GOLDEN - 3 TIEU DE DOC BAN =====
+QUICKNODE_URL = "https://quick-soft-forest.matic.quiknode.pro/84fc0c23521d03a382a4840796c8ba2b36a1b52b/"
+w3 = Web3(Web3.HTTPProvider(QUICKNODE_URL))
+
+st.set_page_config(page_title='BONSAIRWA V10 GOLDEN', layout="wide", page_icon="🌳")
+
+# ===== TIEU DE 1: LOGO LUC SAC DOC BAN =====
+st.markdown("""
+<div style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding:20px; border-radius:15px; border:3px solid #FFD700; text-align:center;">
+    <h1 style="color:#FFD700; font-size:42px; margin:0;">BONSAIRWA</h1>
+    <h2 style="color:white; font-size:28px; margin:5px;">V10 GOLDEN - LUC SAC DOC BAN</h2>
+    <p style="color:#F9A8D4; font-size:16px; margin:5px;">Vang • Tim • Xanh da troi • Xanh ma non • Trang • Hong lot</p>
+    <p style="color:#A3E635; font-size:14px;">Doc ban cua CEO Thanh Thai Nguyen - Cho Lach!</p>
+</div>
+""", unsafe_allow_html=True)
+
+# ===== TIEU DE 2: CAY ME HOANH 90 =====
+st.markdown("""
+<div style="background: linear-gradient(90deg, #8B5CF6 0%, #38BDF8 50%, #FFD700 100%); padding:15px; border-radius:10px; margin-top:15px; text-align:center;">
+    <h2 style="color:white; font-size:22px; margin:0;">🌳 BONSAIRWA-000 | MAI XU ME - BAU VAT</h2>
+    <p style="color:black; font-weight:bold; font-size:16px; margin:5px; background:white; padding:5px; border-radius:5px;">
+        HOANH 90 • CAO 3M • TRUC QUAN TU • DAU VOI DUOI CHUOT • XU CHAY • 500 TRIEU
+    </p>
+    <p style="color:white; font-size:13px;">Mai Vang 6 Canh Nguyen Thuy - Khong Ghep - Gen Quy Hiem - Cay Me Cua 127 Cay</p>
+</div>
+""", unsafe_allow_html=True)
+
+# ===== TIEU DE 3: 【entity-POLYGON¦canonical_name=Polygon】 BLOCK =====
+col1, col2, col3 = st.columns(3)
+with col1:
+    if w3.is_connected():
+        st.success(f"✅ 【entity-Polygon¦canonical_name=Polygon】 - Block: {w3.eth.block_number}")
+    else:
+        st.error("❌ Chua ket noi 【entity-Polygon¦canonical_name=Polygon】")
+with col2:
+    st.info(f"🔗 Block Cay Me: 95777687 | BONSAIRWA-000-XU-90-3M")
+with col3:
+    st.warning(f"⚡ QuickNode: Rung Mem Nhanh - Free 10M")
+
+st.markdown("---")
+st.title('127 Cay Mai Vang RWA')
+st.caption('Cho Lach - QR + Cho RWA + IoT - V10 GOLDEN')
+
+try:
+    df = pd.read_csv('data.csv', encoding='utf-8', on_bad_lines='skip')
+    df = df.sort_values(by='ID', ascending=True)
+    st.write(f"Tong {len(df)} cay - Tong gia tri: {df['GiaTri'].sum():,} VND")
+    mother = df[df['ID']==0]
+    if not mother.empty:
+        st.markdown("### 🌟 CAY ME BONSAIRWA-000 - HOANH 90")
+        st.dataframe(mother, use_container_width=True)
+    t1,t2,t3,t4,t5 = st.tabs(['Ban Do','Canh Bao','QR Cay','Cho RWA','IoT'])
+    with t1:
+        st.subheader(f"So do {len(df)} cay")
+        fig = px.density_heatmap(df, x='Cot', y='Hang', z='DoAm', color_continuous_scale='RdYlGn')
+        st.plotly_chart(fig, use_container_width=True)
+    with t2:
+        kho = df[df['DoAm']<80]
+        st.write(f"Cay can tuoi: {len(kho)} cay")
+        st.dataframe(kho)
+    with t3:
+        st.write("QR cho tung cay - BONSAIRWA-000")
+    with t4:
+        st.write("Cho RWA - Ban cay")
+    with t5:
+        st.write("ESP32 gui DoAm qua ThingSpeak")
+    st.dataframe(df)
+except Exception as e:
+    st.error(f"Loi: {e}")
